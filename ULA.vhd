@@ -110,6 +110,6 @@ BEGIN
 		--			Deslocador		--
 	d0: deslocador PORT MAP (sig_Desl, desc ,SAIDA);
 	
-	COUT <= cout_s XOR carry(15);
+	COUT <= carry(0) AND ( cout_s XOR carry(15) ) OR ( (NOT carry(0)) AND cout_s );
 	
 END arch;
